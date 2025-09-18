@@ -1,9 +1,11 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
+import { Login } from "./logInSite";
 
 const Home = () => {
   return <div>
       Home Page
+      <Link to={"/logInSite"}>Go to login</Link>
   </div>;
 }
 
@@ -12,6 +14,7 @@ function App() {
     <div className="App">
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/logInSite" element={<Login />} />
         </Routes>
     </div>
   );
