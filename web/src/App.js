@@ -1,25 +1,21 @@
-import './App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
+import Gallery from "./pages/Gallery";
+import PaintingDetail from "./pages/PaintingDetail";
+import NotFound from "./pages/NotFound";
+import {Login} from "./logInSite";
 import UserCreation from "./userCreationSite";
-import { Login } from "./logInSite";
-
-const Home = () => {
-  return <div>
-      Home Page
-      <Link to={"/logInSite"}>Go to login</Link>
-  </div>;
-}
+import './App.css';
 
 function App() {
-  return (
-    <div className="App">
+    return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/usercreation" element={<UserCreation />} />
-            <Route path="/logInSite" element={<Login />} />
+            <Route path="/" element={<Gallery />} />
+            <Route path="/painting/:paintingId" element={<PaintingDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/create-account" element={<UserCreation />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
-    </div>
-  );
+    );
 }
 
 export default App;
