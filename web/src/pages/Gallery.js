@@ -1,0 +1,77 @@
+import React from 'react';
+import { Header } from '../components/Header';
+import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
+import './Gallery.css';
+import {useNavigate} from "react-router-dom";
+
+const Gallery = () => {
+    const navigate = useNavigate();
+    return (
+        <div className="gallery-page">
+            <Header />
+
+            <main className="main-content">
+                <section className="hero-section">
+                    <h1 className="hero-title" data-testid="gallery-title">Current Auctions</h1>
+                    <p className="hero-subtitle">Discover exceptional artworks from renowned artists</p>
+                </section>
+
+                <div className="paintings-grid">
+                    {mockPaintings.map((painting) => (
+                        <a
+                            key={painting.id}
+                            href={`/painting/${painting.id}`}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                navigate(`/painting/${painting.id}`);
+                            }}
+                            className="painting-card-link"
+                        >
+                            <div className="painting-card" data-testid={`painting-card-${painting.id}`}>
+                                <div className="painting-image-container">
+                                    <img
+                                        src={painting.imageUrl}
+                                        alt={painting.title}
+                                        className="painting-image"
+                                    />
+                                </div>
+                                <div className="painting-info">
+                                    <h3 className="painting-title">{painting.title}</h3>
+                                    <p className="painting-artist">{painting.artist}, {painting.year}</p>
+
+                                    <div className="painting-details">
+                                        <div className="bid-info">
+                                            <span className="bid-label">Current Bid</span>
+                                            <span className="bid-amount">{formatCurrency(painting.currentBid)}</span>
+                                        </div>
+
+                                        <div className="bid-stats">
+                                            <div className="stat-item">
+                                                <svg className="stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <polyline points="12 6 12 12 16 14"/>
+                                                </svg>
+                                                <span>{painting.bidCount} bids</span>
+                                            </div>
+                                            <div className="stat-item time-remaining">
+                                                <svg className="stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <polyline points="12 6 12 12 16 14"/>
+                                                </svg>
+                                                <span>{getTimeRemaining(painting.endTime)}</span>
+                                            </div>
+                                        </div>
+
+                                        <button className="bid-button">Place Bid</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            </main>
+        </div>
+    );
+};
+
+export default Gallery;
