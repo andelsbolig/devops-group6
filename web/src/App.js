@@ -1,15 +1,12 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
+import { Login } from "./logInSite";
 
 const Home = () => {
   return <div>
       Home Page
-      <Link to={"/login"}>Go to login</Link>
+      <Link to={"/logInSite"}>Go to login</Link>
   </div>;
-}
-
-const Login = () => {
-  return <div>Login Page</div>;
 }
 
 function App() {
@@ -17,7 +14,7 @@ function App() {
     <div className="App">
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/logInSite" element={<Login />} />
         </Routes>
     </div>
   );
