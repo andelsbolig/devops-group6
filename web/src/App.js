@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route, Link } from "react-router-dom";
+import UserCreation from "./userCreationSite";
 
 const Home = () => {
   return <div>
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
         <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/usercreation" element={<UserCreation />} />
         </Routes>
     </div>
   );
