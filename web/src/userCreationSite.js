@@ -1,24 +1,43 @@
 const UserCreation = () => {
-    return <div>
-        <h1>Create Account</h1>
-        <form>
-            <label>
-                Email:
-                <input type="email" name="email" />
-            </label>
-            <label>
-                Username:
-                <input type="text" name="username" />
-            </label>
-            <br />
-            <label>
-                Password:
-                <input type="password" name="password" />
-            </label>
-            <br />
-            <button type="submit">Create Account</button>
-        </form>
-    </div>;
+    return (
+        <div className="user-creation-container">
+            <div className="user-creation-form">
+                <h1>Create Account</h1>
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email" 
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            name="username" 
+                            placeholder="Choose a username" 
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Create a password" 
+                        />
+                    </div>
+                    <button type="submit" className="create-account-button">
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
 }
 
 export default UserCreation;
