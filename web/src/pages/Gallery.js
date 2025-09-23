@@ -3,6 +3,7 @@ import { Header } from '../components/Header';
 import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
 import './Gallery.css';
 import {useNavigate} from "react-router-dom";
+import { Clock, Users } from "lucide-react";
 
 const Gallery = () => {
     const navigate = useNavigate();
@@ -47,17 +48,11 @@ const Gallery = () => {
 
                                         <div className="bid-stats">
                                             <div className="stat-item">
-                                                <svg className="stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                    <circle cx="12" cy="12" r="10"/>
-                                                    <polyline points="12 6 12 12 16 14"/>
-                                                </svg>
+                                                <Users className="stat-icon" size={16} strokeWidth={2} />
                                                 <span>{painting.bidCount} bids</span>
                                             </div>
                                             <div className="stat-item time-remaining">
-                                                <svg className="stat-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                    <circle cx="12" cy="12" r="10"/>
-                                                    <polyline points="12 6 12 12 16 14"/>
-                                                </svg>
+                                                <Clock className="stat-icon" size={16} strokeWidth={2} />
                                                 <span>{getTimeRemaining(painting.endTime)}</span>
                                             </div>
                                         </div>

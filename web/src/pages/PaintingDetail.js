@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
 import './PaintingDetail.css';
-import {useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { ArrowLeft, Clock, Users, Info, User } from "lucide-react";
 
 const PaintingDetail = () => {
     const { paintingId } = useParams(); // paintingId is string
@@ -27,10 +28,7 @@ const PaintingDetail = () => {
                     data-testid="back-button"
                     onClick={() => navigate('/')}
                 >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M19 12H5"/>
-                        <path d="M12 19l-7-7 7-7"/>
-                    </svg>
+                    <ArrowLeft size={20} strokeWidth={2} />
                     Back to Auctions
                 </button>
 
@@ -60,20 +58,15 @@ const PaintingDetail = () => {
                                 <div className="time-left">
                                     <p className="label">Time Remaining</p>
                                     <p className="time-display">
-                                        <svg className="clock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <polyline points="12 6 12 12 16 14"/>
-                                        </svg>
+                                        <Clock size={20} className="clock-icon" />
                                         {getTimeRemaining(painting.endTime)}
                                     </p>
                                 </div>
                             </div>
 
                             <div className="bid-count">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <circle cx="12" cy="8" r="7"/>
-                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-                                </svg>
+
+                                <Users size={16} strokeWidth={2} />
                                 <span>{painting.bidCount} bids</span>
                             </div>
 
@@ -94,11 +87,7 @@ const PaintingDetail = () => {
 
                         <div className="details-card">
                             <h2 className="card-title">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 16v-4"/>
-                                    <path d="M12 8h.01"/>
-                                </svg>
+                                <Info size={20} strokeWidth={2} />
                                 Artwork Details
                             </h2>
                             <dl className="details-list">
@@ -114,21 +103,12 @@ const PaintingDetail = () => {
                                     <dt className="detail-label">Condition</dt>
                                     <dd className="detail-value">{painting.condition}</dd>
                                 </div>
-                                <div className="detail-item">
-                                    <dt className="detail-label">Estimate</dt>
-                                    <dd className="detail-value">
-                                        {formatCurrency(painting.estimate.min)} - {formatCurrency(painting.estimate.max)}
-                                    </dd>
-                                </div>
                             </dl>
                         </div>
 
                         <div className="artist-card">
                             <h2 className="card-title">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <circle cx="12" cy="8" r="7"/>
-                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
-                                </svg>
+                                <User size={20} strokeWidth={2} />
                                 About the Artist
                             </h2>
                             <p className="artist-bio">{painting.artistBio}</p>
