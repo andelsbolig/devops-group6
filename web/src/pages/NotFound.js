@@ -14,7 +14,7 @@ const NotFound = () => {
                 <button
                     className="home-button"
                     data-testid="return-gallery-button"
-                    onClick={() => navigate(ROUTES.HOME)}
+                    onClick={() => navigate(ROUTES.GALLERY)}
                 >
                     Return to Gallery
                 </button>

@@ -1,5 +1,4 @@
 export const ROUTES = {
-    HOME: "/",
     GALLERY: "/",
     PAINTING_DETAIL: (id = ":paintingId") => `/painting/${id}`,
     LOGIN: "/login",

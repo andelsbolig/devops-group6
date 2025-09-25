@@ -1,9 +1,9 @@
 import userEvent from '@testing-library/user-event';
-import { render, screen } from '@testing-library/react';
 import { MemoryRouter, Routes, Route, Link } from "react-router-dom";
-import App from './App';
 import { render, screen } from '@testing-library/react';
+
 import { mockPaintings } from './data/mockPaintings';
+import App from './App';
 
 describe('App Routing', () => {
     test('renders Gallery page on default route', () => {
@@ -32,7 +32,7 @@ describe('App Routing', () => {
         expect(screen.getByTestId('painting-artist')).toHaveTextContent(painting.artist);
         expect(screen.getByTestId('bid-input')).toHaveAttribute(
             'placeholder',
-            `Minimum bid: ${painting.minimumBid.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 })}`
+            `Minimum bid: ${painting.minimumBid.toLocaleString('da-DK', { style: 'currency', currency: 'DKK', minimumFractionDigits: 0 })}`
         );
     });
 
@@ -102,4 +102,20 @@ describe('App Navigation', () => {
 
         expect(screen.getByTestId('gallery-title')).toBeInTheDocument();
     });
+});
+
+beforeAll(() => {
+    jest.spyOn(console, 'warn').mockImplementation((msg, ...args) => {
+        if (
+            typeof msg === "string" &&
+            msg.includes("Relative route resolution within Splat routes is changing in v7")
+        ) {
+            return; // ignore this specific warning
+        }
+        console.warn(msg, ...args); // still show other warnings
+    });
+});
+
+afterAll(() => {
+    console.warn.mockRestore(); // restore original console.warn after tests
 });

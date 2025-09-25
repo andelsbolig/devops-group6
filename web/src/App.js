@@ -12,7 +12,7 @@ import './App.css';
 function App() {
     return (
         <Routes>
-            <Route path={ROUTES.HOME} element={<Gallery />} />
+            <Route path={ROUTES.GALLERY} element={<Gallery />} />
             <Route path={ROUTES.PAINTING_DETAIL()} element={<PaintingDetail />} />
             <Route path={ROUTES.LOGIN} element={<Login />} />
             <Route path={ROUTES.CREATE_ACCOUNT} element={<UserCreation />} />
