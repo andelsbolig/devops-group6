@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
+
 import './NotFound.css';
-import {useNavigate} from "react-router-dom";
+import {ROUTES} from "../routes";
 
 const NotFound = () => {
     const navigate = useNavigate();
@@ -12,7 +14,7 @@ const NotFound = () => {
                 <button
                     className="home-button"
                     data-testid="return-gallery-button"
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate(ROUTES.HOME)}
                 >
                     Return to Gallery
                 </button>

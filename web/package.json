@@ -2,7 +2,6 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/devops-group6/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "lucide-react": "^0.544.0",

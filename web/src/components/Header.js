@@ -1,7 +1,8 @@
 import React from 'react';
-import './Header.css';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { User } from "lucide-react";
+
+import { ROUTES } from "../routes";
 
 export const Header = () => {
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ export const Header = () => {
 
                     <a href="/" onClick={(e) => {
                         e.preventDefault();
-                        navigate('/');
+                        navigate(ROUTES.HOME);
                     }} className="logo-link">
                         <img
                             src={`${process.env.PUBLIC_URL}/logo.png`}
@@ -25,7 +26,7 @@ export const Header = () => {
 
                     <div className="nav-links">
                         <button
-                            onClick={() => navigate('/login')}
+                            onClick={() => navigate(ROUTES.LOGIN)}
                             className="nav-button nav-button-primary"
                         >
                             <User className="button-icon" size={16} strokeWidth={2} />

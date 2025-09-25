@@ -1,9 +1,12 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
+import { Clock, Users } from "lucide-react";
+
 import { Header } from '../components/Header';
 import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
+import { ROUTES } from "../routes";
+
 import './Gallery.css';
-import {useNavigate} from "react-router-dom";
-import { Clock, Users } from "lucide-react";
 
 const Gallery = () => {
     const navigate = useNavigate();
@@ -24,7 +27,7 @@ const Gallery = () => {
                             href={`/painting/${painting.id}`}
                             onClick={(e) => {
                                 e.preventDefault();
-                                navigate(`/painting/${painting.id}`);
+                                navigate(ROUTES.PAINTING_DETAIL(painting.id));
                             }}
                             className="painting-card-link"
                         >

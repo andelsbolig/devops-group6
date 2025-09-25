@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { Header } from '../components/Header';
-import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
-import './PaintingDetail.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, Clock, Users, Info, User } from "lucide-react";
+
+import { Header } from '../components/Header';
+import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
+import { ROUTES } from "../routes";
+
+import './PaintingDetail.css';
 
 const PaintingDetail = () => {
     const { paintingId } = useParams(); // paintingId is string
@@ -26,7 +29,7 @@ const PaintingDetail = () => {
                 <button
                     className="back-button"
                     data-testid="back-button"
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate(ROUTES.GALLERY)}
                 >
                     <ArrowLeft size={20} strokeWidth={2} />
                     Back to Auctions

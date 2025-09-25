@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
+import { ROUTES } from "../routes";
+
+import "./Login.css"
+
 const UserCreation = () => {
     const navigate = useNavigate();
     
@@ -9,7 +13,7 @@ const UserCreation = () => {
                 <div className="form-header">
                     <button 
                         className="back-button" 
-                        onClick={() => navigate("/logInSite")}
+                        onClick={() => navigate(ROUTES.LOGIN)}
                     >
                         ← Back to Login
                     </button>

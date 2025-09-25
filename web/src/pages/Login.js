@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+import "./Login.css";
+import {ROUTES} from "../routes";
+
+const Login = () => {
     const navigate = useNavigate();
     return (
         <div className="login-container">
@@ -30,13 +33,13 @@ export const Login = () => {
                 <div className="buttons-container">
                     <button 
                         className="secondary-button" 
-                        onClick={() => navigate("/usercreation")}
+                        onClick={() => navigate(ROUTES.CREATE_ACCOUNT)}
                     >
                         Create Account
                     </button>
                     <button 
                         className="secondary-button" 
-                        onClick={() => navigate("/forgotpassword")}
+                        onClick={() => navigate(ROUTES.FORGOT_PASSWORD)}
                     >
                         Forgot Password?
                     </button>
@@ -45,3 +48,5 @@ export const Login = () => {
         </div>
     );
 }
+
+export default Login;
