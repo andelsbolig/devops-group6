@@ -5,16 +5,13 @@
 
 /* Header styling */
 .header {
+  width: 100vw;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #e5e5e5;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  /* Prevent header from shifting due to scrollbar */
-  width: 100%;
-  left: 0;
-  right: 0;
 }
 
 .header-container {

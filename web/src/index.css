@@ -6,8 +6,7 @@
 }
 
 html {
-    /* Modern approach - reserve space for scrollbar */
-    scrollbar-gutter: stable;
+    overflow-x: hidden;
 }
 
 body {
