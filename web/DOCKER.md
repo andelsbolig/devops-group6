@@ -17,7 +17,10 @@ This directory contains Docker configuration for the React frontend application.
 Run the development server with hot reloading:
 
 ```bash
-# Using Docker Compose (recommended)
+# Using Docker Compose with Docker Watch (recommended)
+docker-compose watch
+
+# Or using Docker Compose without watch
 docker-compose up web
 
 # Or build and run manually
@@ -26,6 +29,11 @@ docker run -p 3000:3000 -v "${PWD}/src:/app/src" -v "${PWD}/public:/app/public" 
 ```
 
 The application will be available at http://localhost:3000
+
+#### Docker Watch Benefits
+- **Instant sync**: Changes to `/src` and `/public` are immediately synced to the container
+- **Smart rebuilds**: Container rebuilds only when `package.json` or `package-lock.json` change
+- **Better performance**: More efficient than volume mounting for file watching
 
 ### Production Mode
 
@@ -51,9 +59,29 @@ docker build -t your-registry/web:latest .
 docker push your-registry/web:latest
 ```
 
+## Docker Watch Setup
+
+Docker Watch provides efficient file synchronization and smart rebuilds for development.
+
+### Configuration
+The `docker-compose.yml` includes watch configuration:
+- **Sync**: `/src` and `/public` directories sync instantly
+- **Rebuild**: Triggers when `package.json` or `package-lock.json` change
+- **Ignore**: Excludes `node_modules` from syncing
+
+### Usage
+```bash
+# Start with Docker Watch
+docker-compose watch
+
+# Stop Docker Watch
+Ctrl+C or docker-compose down
+```
+
 ## Features
 
 - Multi-stage build for optimized production images
+- Docker Watch for efficient development workflow
 - Hot reloading in development mode
 - Custom nginx configuration with:
   - React Router support (SPA routing)

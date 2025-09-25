@@ -1,6 +1,5 @@
-version: '3.8'
-
 services:
+  # Development with volume mounting (traditional approach)
   web:
     build:
       context: .
@@ -14,8 +13,40 @@ services:
     environment:
       - CHOKIDAR_USEPOLLING=true
       - REACT_APP_ENV=development
+      - WATCHPACK_POLLING=true
     stdin_open: true
     tty: true
+
+  # Development with Docker Watch (modern approach)
+  web-watch:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_ENV=development
+      - FAST_REFRESH=true
+    stdin_open: true
+    tty: true
+    develop:
+      watch:
+        # Sync source code changes
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+        # Sync public assets
+        - action: sync
+          path: ./public
+          target: /app/public
+        # Rebuild when package.json changes
+        - action: rebuild
+          path: ./package.json
+        # Rebuild when package-lock.json changes  
+        - action: rebuild
+          path: ./package-lock.json
 
   web-prod:
     build:
