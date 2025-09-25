@@ -30,13 +30,13 @@ export const Login = () => {
                 <div className="buttons-container">
                     <button 
                         className="secondary-button" 
-                        onClick={() => navigate("/create-account")}
+                        onClick={() => navigate("/usercreation")}
                     >
                         Create Account
                     </button>
                     <button 
                         className="secondary-button" 
-                        onClick={() => navigate("/forgot-password")}
+                        onClick={() => navigate("/forgotpassword")}
                     >
                         Forgot Password?
                     </button>

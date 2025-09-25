@@ -1,8 +1,20 @@
+import { useNavigate } from "react-router-dom";
+
 const UserCreation = () => {
+    const navigate = useNavigate();
+    
     return (
         <div className="user-creation-container">
             <div className="user-creation-form">
-                <h1>Create Account</h1>
+                <div className="form-header">
+                    <button 
+                        className="back-button" 
+                        onClick={() => navigate("/logInSite")}
+                    >
+                        ← Back to Login
+                    </button>
+                    <h1>Create Account</h1>
+                </div>
                 <form>
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
