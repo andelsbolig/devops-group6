@@ -15,7 +15,11 @@ export const Header = () => {
                         e.preventDefault();
                         navigate('/');
                     }} className="logo-link">
-                        *LOGO*
+                        <img
+                            src={`${process.env.PUBLIC_URL}/logo.png`}
+                            alt="Take The Art And Run Logo"
+                            className="logo-icon"
+                        />
                         <h1 className="site-title">Take The Art And Run</h1>
                     </a>
 
