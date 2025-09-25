@@ -5,6 +5,8 @@ import NotFound from "./pages/NotFound";
 import {Login} from "./logInSite";
 import UserCreation from "./userCreationSite";
 import './App.css';
+import ForgotPassword from "./forgotPasswordSite";
+import { Login } from "./logInSite";
 
 function App() {
     return (
@@ -14,6 +16,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/create-account" element={<UserCreation />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
         </Routes>
     );
 }

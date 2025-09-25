@@ -1,5 +1,6 @@
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import { MemoryRouter, Routes, Route, Link } from "react-router-dom";
 import App from './App';
 import { render, screen } from '@testing-library/react';
 import { mockPaintings } from './data/mockPaintings';

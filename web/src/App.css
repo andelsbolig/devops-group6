@@ -1,3 +1,4 @@
+/* Base App Styles */
 .App {
   text-align: center;
     min-height: 100vh;
@@ -38,6 +39,42 @@
   }
 }
 
+/* Authentication Shared Styles */
+/* Container for auth pages */
+.login-container,
+.user-creation-container,
+.forgot-password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Form styling for auth pages */
+.login-form,
+.user-creation-form,
+.forgot-password-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.login-form h1,
+.user-creation-form h1,
+.forgot-password-form h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+/* Form group styling */
 .form-group {
   margin-bottom: 20px;
 }
@@ -51,6 +88,7 @@
 
 .form-group input {
   width: 100%;
+  box-sizing: border-box;
   padding: 10px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -64,10 +102,30 @@
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
 }
 
-.primary-button:hover .login-button:hover {
-  background-color: #357abD;
+/* Primary buttons */
+.login-button,
+.create-account-button,
+.reset-password-button {
+  width: 100%;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
+.login-button:hover,
+.create-account-button:hover,
+.reset-password-button:hover {
+  background-color: #357abd;
+}
+
+/* Secondary buttons */
 .secondary-button {
   background-color: transparent;
   color: #4a90e2;
@@ -85,46 +143,44 @@
   background-color: rgba(74, 144, 226, 0.1);
 }
 
+/* Container for multiple buttons */
 .buttons-container {
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
 }
 
-/* Login and User Creation Pages Share the Same Styles 
-   We use different class names for flexibility */
-
-/* Login Page Specific Styles */
-.login-container, .user-creation-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  padding: 20px;
+/* Form header with back button */
+.form-header {
+  position: relative;
+  margin-bottom: 30px;
+  padding-top: 30px;
 }
 
-.login-form, .user-creation-form {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 20px;
+.form-header h1 {
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
-.login-button, .create-account-button {
-  width: 100%;
-  background-color: #4a90e2;
-  color: white;
+/* Back button styling */
+.back-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(74, 144, 226, 0.1);
   border: none;
   border-radius: 4px;
-  padding: 12px;
-  font-size: 16px;
+  color: #4a90e2;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  color: #357abd;
+  background-color: rgba(74, 144, 226, 0.2);
 }
