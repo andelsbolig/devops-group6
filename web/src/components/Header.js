@@ -14,7 +14,7 @@ export const Header = () => {
 
                     <a href="/" onClick={(e) => {
                         e.preventDefault();
-                        navigate(ROUTES.HOME);
+                        navigate(ROUTES.GALLERY);
                     }} className="logo-link">
                         <img
                             src={`${process.env.PUBLIC_URL}/logo.png`}
