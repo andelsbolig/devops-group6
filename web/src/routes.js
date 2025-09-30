@@ -5,5 +5,7 @@ export const ROUTES = {
     CREATE_ACCOUNT: "/create-account",
     FORGOT_PASSWORD: "/forgot-password",
     NOT_FOUND: "*",
+    ARTISTS: "/artists",
+    ARTIST_DETAIL: (id = ":artistId") => `/artists/${id}`,
 };
 
