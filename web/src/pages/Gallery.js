@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Clock, Users } from "lucide-react";
 
 import { Header } from '../components/Header';
-import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
+import { mockPaintings, formatCurrency } from '../data/mockPaintings';
 import { ROUTES } from "../routes";
 
 import './Gallery.css';
@@ -46,7 +46,7 @@ const Gallery = () => {
                                     <div className="painting-details">
                                         <div className="bid-info">
                                             <span className="bid-label">Current Bid</span>
-                                            <span className="bid-amount">{formatCurrency(painting.currentBid)}</span>
+                                            <span className="bid-amount">{formatCurrency(painting.highestBid)}</span>
                                         </div>
 
                                         <div className="bid-stats">
@@ -54,10 +54,12 @@ const Gallery = () => {
                                                 <Users className="stat-icon" size={16} strokeWidth={2} />
                                                 <span>{painting.bidCount} bids</span>
                                             </div>
+                                            {/*
                                             <div className="stat-item time-remaining">
                                                 <Clock className="stat-icon" size={16} strokeWidth={2} />
-                                                <span>{getTimeRemaining(painting.endTime)}</span>
+                                                <span>{}</span>
                                             </div>
+                                            */}
                                         </div>
 
                                         <button className="bid-button">Place Bid</button>

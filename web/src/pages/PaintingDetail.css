@@ -6,9 +6,13 @@
 }
 
 .detail-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     max-width: 1200px;
-    margin: 0 auto;
     padding: 2rem;
+    box-sizing: border-box;
+    margin: 1rem auto 0;
 }
 
 .not-found {
@@ -21,7 +25,6 @@
 }
 
 .back-button {
-    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;

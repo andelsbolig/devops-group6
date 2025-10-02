@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, Clock, Users, Info, User } from "lucide-react";
 
 import { Header } from '../components/Header';
-import { mockPaintings, getTimeRemaining, formatCurrency } from '../data/mockPaintings';
+import { mockPaintings, formatCurrency } from '../data/mockPaintings';
 import { ROUTES } from "../routes";
 
 import './PaintingDetail.css';
@@ -55,16 +55,18 @@ const PaintingDetail = () => {
                         <div className="bid-card primary-card">
                             <div className="bid-header">
                                 <div className="bid-current">
-                                    <p className="label">Current Bid</p>
-                                    <p className="amount" data-testid="current-bid" >{formatCurrency(painting.currentBid)}</p>
+                                    <p className="label">Highest Bid</p>
+                                    <p className="amount" data-testid="current-bid" >{formatCurrency(painting.highestBid)}</p>
                                 </div>
+                                {/*
                                 <div className="time-left">
                                     <p className="label">Time Remaining</p>
                                     <p className="time-display">
                                         <Clock size={20} className="clock-icon" />
-                                        {getTimeRemaining(painting.endTime)}
+                                        {}
                                     </p>
                                 </div>
+                                */}
                             </div>
 
                             <div className="bid-count">
@@ -77,12 +79,13 @@ const PaintingDetail = () => {
                                 <input
                                     data-testid="bid-input"
                                     type="number"
-                                    placeholder={`Minimum bid: ${formatCurrency(painting.minimumBid)}`}
+                                    placeholder={`Place your bid`}
                                     value={bidAmount}
                                     onChange={(e) => setBidAmount(e.target.value)}
                                     className="bid-input"
                                 />
-                                <button className="place-bid-button">
+                                <button className="place-bid-button"
+                                onClick={() => {}}>
                                     Place Bid
                                 </button>
                             </div>

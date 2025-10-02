@@ -71,13 +71,14 @@
 }
 
 .nav-button-ghost {
-  background-color: transparent;
-  color: #666;
+  background: transparent;
+  color: black;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .nav-button-ghost:hover {
-  background-color: #f5f5f5;
-  color: #1a1a1a;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
 }
 
 .nav-button-primary {
