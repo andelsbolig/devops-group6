@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, Clock, Users, Info, User } from "lucide-react";
+import { ArrowLeft, Users, Info, User } from "lucide-react";
 
 import { Header } from '../components/Header';
 import { mockPaintings, formatCurrency } from '../data/mockPaintings';

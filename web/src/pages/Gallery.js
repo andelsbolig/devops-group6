@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { Clock, Users } from "lucide-react";
+import { Users } from "lucide-react";
 
 import { Header } from '../components/Header';
 import { mockPaintings, formatCurrency } from '../data/mockPaintings';
