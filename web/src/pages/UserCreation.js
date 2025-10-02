@@ -15,9 +15,9 @@ const UserCreation = () => {
             <div className="user-creation-container">
 
                 <div className="user-creation-form">
-                    <div className="form-header">
+                    <div className="login-form-header">
                         <button
-                            className="back-button"
+                            className="login-back-button"
                             onClick={() => navigate(ROUTES.LOGIN)}
                         >
                             ← Back to Login
@@ -25,7 +25,7 @@ const UserCreation = () => {
                         <h1>Create Account</h1>
                     </div>
                     <form>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="email">Email</label>
                             <input
                                 type="email"
@@ -34,7 +34,7 @@ const UserCreation = () => {
                                 placeholder="Enter your email"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="username">Username</label>
                             <input
                                 type="text"
@@ -43,7 +43,7 @@ const UserCreation = () => {
                                 placeholder="Choose a username"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="password">Password</label>
                             <input
                                 type="password"
