@@ -26,6 +26,9 @@ docker-compose up web
 # Or build and run manually
 docker build -f Dockerfile.dev -t web-dev .
 docker run -p 3000:3000 -v "${PWD}/src:/app/src" -v "${PWD}/public:/app/public" web-dev
+
+# Run tests
+docker-compose run web npm test
 ```
 
 The application will be available at http://localhost:3000
