@@ -32,7 +32,7 @@ describe('App Routing', () => {
         expect(screen.getByTestId('painting-artist')).toHaveTextContent(painting.artist);
         expect(screen.getByTestId('bid-input')).toHaveAttribute(
             'placeholder',
-            `Minimum bid: ${painting.minimumBid.toLocaleString('da-DK', { style: 'currency', currency: 'DKK', minimumFractionDigits: 0 })}`
+            `Place your bid`
         );
     });
 
