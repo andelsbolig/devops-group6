@@ -42,18 +42,18 @@
 }
 
 /* Form group styling */
-.form-group {
+.login-form-group {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.login-form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
     color: #555;
 }
 
-.form-group input {
+.login-form-group input {
     width: 100%;
     box-sizing: border-box;
     padding: 10px 12px;
@@ -63,7 +63,7 @@
     transition: border-color 0.3s;
 }
 
-.form-group input:focus {
+.login-form-group input:focus {
     border-color: #4a90e2;
     outline: none;
     box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
@@ -93,7 +93,7 @@
 }
 
 /* Secondary buttons */
-.secondary-button {
+.login-secondary-button {
     background-color: transparent;
     color: #4a90e2;
     border: 1px solid #4a90e2;
@@ -106,31 +106,31 @@
     margin: 5px;
 }
 
-.secondary-button:hover {
+.login-secondary-button:hover {
     background-color: rgba(74, 144, 226, 0.1);
 }
 
 /* Container for multiple buttons */
-.buttons-container {
+.login-buttons-container {
     display: flex;
     justify-content: space-between;
     margin-top: 16px;
 }
 
 /* Form header with back button */
-.form-header {
+.login-form-header {
     position: relative;
     margin-bottom: 30px;
     padding-top: 30px;
 }
 
-.form-header h1 {
+.login-form-header h1 {
     margin-top: 15px;
     margin-bottom: 0;
 }
 
 /* Back button styling */
-.back-button {
+.login-back-button {
     position: absolute;
     top: 0;
     left: 0;
@@ -147,7 +147,7 @@
     transition: all 0.2s ease;
 }
 
-.back-button:hover {
+.login-back-button:hover {
     color: #357abd;
     background-color: rgba(74, 144, 226, 0.2);
 }

@@ -14,7 +14,7 @@ const Login = () => {
                 <div className="login-form">
                     <h1>Login</h1>
                     <form>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="username">Username</label>
                             <input
                                 type="text"
@@ -23,7 +23,7 @@ const Login = () => {
                                 placeholder="Enter your username"
                             />
                         </div>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="password">Password</label>
                             <input
                                 type="password"
@@ -34,15 +34,15 @@ const Login = () => {
                         </div>
                         <button type="submit" className="login-button">Login</button>
                     </form>
-                    <div className="buttons-container">
+                    <div className="login-buttons-container">
                         <button
-                            className="secondary-button"
+                            className="login-secondary-button"
                             onClick={() => navigate(ROUTES.CREATE_ACCOUNT)}
                         >
                             Create Account
                         </button>
                         <button
-                            className="secondary-button"
+                            className="login-secondary-button"
                             onClick={() => navigate(ROUTES.FORGOT_PASSWORD)}
                         >
                             Forgot Password?

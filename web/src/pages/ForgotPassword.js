@@ -13,9 +13,9 @@ const ForgotPassword = () => {
             <Header />
             <div className="forgot-password-container">
                 <div className="forgot-password-form">
-                    <div className="form-header">
+                    <div className="login-form-header">
                         <button
-                            className="back-button"
+                            className="login-back-button"
                             onClick={() => navigate(ROUTES.LOGIN)}
                         >
                             ← Back to Login
@@ -23,7 +23,7 @@ const ForgotPassword = () => {
                         <h1>Forgot Password</h1>
                     </div>
                     <form>
-                        <div className="form-group">
+                        <div className="login-form-group">
                             <label htmlFor="email">Email</label>
                             <input
                                 type="email"
