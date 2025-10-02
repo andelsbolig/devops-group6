@@ -4,7 +4,7 @@ const artistMaelle = process.env.PUBLIC_URL + '/artistMaelle.svg';
 export const mockArtists = [ 
   { 
       artistId: "maelle",
-      name: 'Maelle Desendre',
+      name: 'Maelle Dessendre',
       image: artistMaelle,
       bio: `Maelle is a fiercely talented artist and a masterful duelist,
             blending elegance and edge in everything she does. Her creations captivate,
